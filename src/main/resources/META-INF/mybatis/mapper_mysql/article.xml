@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+
+<mapper namespace="kr.co.yonhapnews.domain.send.svc.SendDAO">
+
+	<cache/>
+	
+	
+	<select id="selListArticle" resultType="ArticleDVO">
+		<![CDATA[
+			SELECT * FROM  ARTICLE  
+			ORDER BY IDX DESC 
+			limit  #{LIMIT_START} , #{ROW_PER_PAGE} 
+		]]> 
+	</select>
+	
+	
+	<insert id="insArticle" parameterType="ArticleDVO">
+		<![CDATA[ 		
+		INSERT INTO ARTICLE (TITLE,CONTENT,WRITER,STATE,REGDATE) values (#{TITLE},#{CONTENT},#{WRITER},#{STATE},NOW())
+		]]>	
+	</insert>
+
+
+
+	<select id="selArticle" parameterType="int" resultType="ArticleDVO" >
+		<![CDATA[
+			SELECT * FROM  ARTICLE WHERE IDX=#{IDX}
+		]]> 
+	</select>
+	
+
+	<select id="selArticleCnt" resultType="int" >
+		<![CDATA[
+			SELECT COUNT(IDX) FROM  ARTICLE 
+		]]> 
+	</select>
+
+
+</mapper>	
