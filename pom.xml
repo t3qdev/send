@@ -210,7 +210,14 @@
 			<version>4.12</version>
 		</dependency>
 
-
+        <!-- Message -->
+        <dependency>
+            <groupId>com.example</groupId>
+            <artifactId>message</artifactId>
+            <version>0.0.1-SNAPSHOT</version>
+        </dependency>
+        
+        
   </dependencies>
    
 </project>

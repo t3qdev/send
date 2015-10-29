@@ -1,8 +1,12 @@
 package kr.co.yonhapnews.biz.send.vo;
 
+import java.io.Serializable;
+
+import com.example.message.model.YMessage;
+
 import kr.co.yonhapnews.web.common.PagingVo;
 
-public class ArticleBVO extends PagingVo {
+public class ArticleBVO extends YMessage  implements Serializable {
 
 	private static final long serialVersionUID = 1L;
 	
